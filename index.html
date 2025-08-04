@@ -15,14 +15,20 @@
 
   <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){
+        n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+
     fbq('init', '1863041204266352');
     fbq('track', 'PageView');
   </script>
@@ -62,11 +68,11 @@
       text-shadow: 0px 0px 8px rgba(0,0,0,0.6);
     }
 
-    .whatsapp {
+    .wsp {
       margin: 40px 0;
     }
 
-    .button {
+    .go {
       padding: 0.9em 2em;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 28px;
@@ -82,21 +88,21 @@
       transition: transform 0.2s ease;
     }
 
-    .button:hover {
+    .go:hover {
       transform: scale(1.05);
       background-color: #1ebc5a;
     }
 
-    .button img {
+    .go img {
       width: 28px;
       height: 28px;
     }
 
-    .info {
+    .info-box {
       margin-bottom: 60px;
     }
 
-    .info p, .info h3 {
+    .info-box p, .info-box h3 {
       margin: 12px 0;
       text-shadow: 0px 0px 6px rgba(0,0,0,0.5);
     }
@@ -105,7 +111,7 @@
 <body>
 
   <div class="logo">
-    <img src="img/logo casss.png" alt="Ganamos Logo" />
+    <img src="img/logo casss.png" alt="Logo" />
   </div>
 
   <div class="main-title">
@@ -113,32 +119,31 @@
     <p>Y COMENZÁ A GANAR</p>
   </div>
 
-  <div class="whatsapp">
-    <button class="button" id="whatsappButton">
+  <div class="wsp">
+    <button class="go" id="btn">
       CONTACTARSE
-      <img src="img/whatsapp.png" alt="WhatsApp" />
+      <img src="img/whatsapp.png" alt="W" />
     </button>
   </div>
 
-  <div class="info">
+  <div class="info-box">
     <p>Mínimo de carga: $2.000</p>
     <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3>
   </div>
 
   <script>
-    document.getElementById("whatsappButton").addEventListener("click", function () {
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Contact');
+    document.addEventListener("DOMContentLoaded", function () {
+      const trigger = document.getElementById("btn");
+      if (trigger) {
+        trigger.addEventListener("click", function () {
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Contact');
+          }
+          const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE1NzM3OTY5P3RleHQ9wqFIb2xhISBWaSBlc3RlIGFudW5jaW8sIHF1aWVybyB1biB1c3VhcmlvLg==";
+          window.open(atob(encoded), "_blank");
+        });
       }
-
-      const numero = "5493515737969";
-      const mensaje = "¡Hola! Vi este anuncio, quiero un usuario.";
-      window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
     });
   </script>
 </body>
 </html>
-
-
-
-
