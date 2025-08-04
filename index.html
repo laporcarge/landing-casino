@@ -131,6 +131,16 @@
     <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3>
   </div>
 
+  <!-- Contador de usuarios falsos -->
+  <div id="contador-falso" style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 12px 18px; border-radius: 10px; font-size: 16px; z-index: 9999;">
+    Usuarios conectados: <span id="usuarios-numero"></span>
+  </div>
+
+  <!-- Notificaciones de premios -->
+  <div id="notificacion-premio" style="position: fixed; top: 20px; right: 20px; background: #1ebc5a; color: white; padding: 14px 20px; border-radius: 12px; font-weight: bold; font-size: 15px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+    🎉 ¡Alguien acaba de ganar $25.000!
+  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const trigger = document.getElementById("btn");
@@ -143,7 +153,40 @@
           window.open(atob(encoded), "_blank");
         });
       }
+
+      // Contador de usuarios falsos
+      const minUsuarios = 78;
+      const maxUsuarios = 132;
+      const usuariosElemento = document.getElementById("usuarios-numero");
+
+      function actualizarUsuarios() {
+        const num = Math.floor(Math.random() * (maxUsuarios - minUsuarios + 1)) + minUsuarios;
+        usuariosElemento.textContent = num;
+      }
+
+      setInterval(actualizarUsuarios, 3000);
+      actualizarUsuarios();
+
+      // Notificaciones falsas de premios
+      const noti = document.getElementById("notificacion-premio");
+      const mensajes = [
+        "🎉 ¡Alguien ganó $25.000!",
+        "🎁 ¡Premio liberado de $10.000!",
+        "💸 ¡Jugador cobró $18.500!",
+        "🔥 ¡Ganancia de $32.000 confirmada!",
+        "🎊 ¡Nuevo ganador en Córdoba!",
+        "✅ ¡Transferencia enviada al instante!"
+      ];
+
+      function mostrarNoti() {
+        noti.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
+        noti.style.display = "block";
+        setTimeout(() => { noti.style.display = "none"; }, 4200);
+      }
+
+      setInterval(mostrarNoti, 9000);
     });
   </script>
+
 </body>
 </html>
