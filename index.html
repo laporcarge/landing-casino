@@ -5,133 +5,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ganamos</title>
 
-  <!-- META Pixel -->
-  <script>
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod
-          ? n.callMethod.apply(n, arguments)
-          : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = "https://connect.facebook.net/en_US/fbevents.js";
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(window, document, "script");
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    fbq("init", "1863041204266352");
-    fbq("track", "PageView");
+  <!-- Ícono -->
+  <link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1863041204266352');
+    fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/>
+         src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/>
   </noscript>
 
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: "Inter", sans-serif;
-      background: linear-gradient(135deg, #2b1055, #7597de);
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
+      font-family: 'Inter', sans-serif; color: white;
+      background: url("img/fondo-2.avif") no-repeat center center fixed;
+      background-size: cover; text-align: center;
     }
-    .hero {
-      background-image: url("img/fondo-casino.jpg");
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: brightness(0.6);
+    .logo img { margin-top: 40px; width: 230px; }
+    .main-title { margin: 30px 0; font-family: 'Bebas Neue', sans-serif; }
+    .main-title p { font-size: 36px; margin: 10px 0; text-shadow: 0px 0px 8px rgba(0,0,0,0.6); }
+    .wsp { margin: 40px 0; }
+    .go {
+      padding: 0.9em 2em; font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+      background-color: #25D366; border: none; border-radius: 12px; color: white;
+      cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      display: inline-flex; align-items: center; gap: 12px; transition: transform 0.2s ease;
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #fff;
-      text-shadow: 0 0 10px #000;
-    }
-    button {
-      background: #00d084;
-      border: none;
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 15px 35px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #00b874;
-      transform: scale(1.05);
-    }
+    .go:hover { transform: scale(1.05); background-color: #1ebc5a; }
+    .go img { width: 28px; height: 28px; }
+    .info-box { margin-bottom: 60px; }
+    .info-box p, .info-box h3 { margin: 12px 0; text-shadow: 0px 0px 6px rgba(0,0,0,0.5); }
   </style>
 </head>
-
 <body>
-  <div class="hero">
-    <h1>🎰 HACÉ CLICK EN CONTACTARSE Y COMENZÁ A GANAR 🎰</h1>
-    <button id="btn" onclick="window.open('https://wa.me/5493518055966', '_blank')">CONTACTARSE 💸</button>
+
+  <div class="logo">
+    <img src="img/logo%20casss.png" alt="Logo" />
   </div>
 
-  <!-- CAPI Script -->
+  <div class="main-title">
+    <p>HACÉ CLICK EN CONTACTARSE</p>
+    <p>Y COMENZÁ A GANAR</p>
+  </div>
+
+  <div class="wsp">
+    <button class="go" id="btn">
+      CONTACTARSE
+      <img src="img/whatsapp.png" alt="W" />
+    </button>
+  </div>
+
+  <div class="info-box">
+    <p>Mínimo de carga: $2.000</p>
+    <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3>
+  </div>
+
+  <!-- Contador de usuarios falsos -->
+  <div id="contador-falso" style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 12px 18px; border-radius: 10px; font-size: 16px; z-index: 9999;">
+    Usuarios conectados: <span id="usuarios-numero"></span>
+  </div>
+
+  <!-- Notificaciones de premios -->
+  <div id="notificacion-premio" style="position: fixed; top: 20px; right: 20px; background: #1ebc5a; color: white; padding: 14px 20px; border-radius: 12px; font-weight: bold; font-size: 15px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+    🎉 ¡Alguien acaba de ganar $25.000!
+  </div>
+
+  <!-- ===== CAPI + lógica de página ===== -->
   <script>
-    // helper cookie
+    // Helpers cookies para fbp/fbc
     function getCookie(name) {
       const m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
       return m ? m.pop() : "";
     }
-
-    // crea cookie _fbc si hay fbclid
+    // Si llega fbclid en la URL, genero _fbc (requerido por CAPI)
     (function ensureFbcFromFbclid(){
-      const params = new URLSearchParams(window.location.search);
-      const fbclid = params.get('fbclid');
+      const fbclid = new URLSearchParams(location.search).get('fbclid');
       if (fbclid && !getCookie('_fbc')) {
         const fbc = `fb.1.${Date.now()}.${fbclid}`;
         document.cookie = `_fbc=${fbc}; path=/; max-age=${60*60*24*90}`;
       }
     })();
 
-    async function sendCapiContact() {
+    // Enviar evento Contact por Pixel + CAPI (dedup con event_id)
+    async function sendCapiContact(value = 0, currency = 'ARS') {
       const fbp = getCookie('_fbp') || "";
       const fbc = getCookie('_fbc') || "";
       const event_id = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
-      // pixel (cliente)
-      if (typeof fbq !== "undefined") {
-        fbq("track", "Contact", {}, { eventID: event_id });
+      // 1) Pixel (navegador) con mismo event_id
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Contact', { value, currency }, { eventID: event_id });
       }
 
-      // evento servidor (CAPI)
+      // 2) Servidor (CAPI) via /api/meta-capi
       try {
-        await fetch("/api/meta-capi", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+        await fetch('/api/meta-capi', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            event_name: "Contact",
+            event_name: 'Contact',
+            event_source_url: location.href,
             event_id,
             fbp,
             fbc,
-            event_source_url: location.href,
-          }),
+            value,
+            currency
+          })
         });
-        console.log("✅ Evento Contact enviado por CAPI");
-      } catch (err) {
-        console.warn("CAPI send error:", err);
+      } catch (e) {
+        console.warn('CAPI send error', e);
       }
     }
 
-    document.getElementById("btn").addEventListener("click", sendCapiContact);
+    document.addEventListener("DOMContentLoaded", function () {
+      const trigger = document.getElementById("btn");
+      if (trigger) {
+        trigger.addEventListener("click", async function () {
+          // dispara contacto (pixel + capi)
+          await sendCapiContact(0, 'ARS');
+
+          // Abre WhatsApp (mantengo tu enlace base64)
+          const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE4MDU1OTY2P3RleHQ9aG9sYSwlMjBxdWllcm8lMjB1bmElMjBjdWVudGEuJTIwTWklMjBub21icmVlJTIwZXMuLi4=";
+          window.open(atob(encoded), "_blank");
+        });
+      }
+
+      // Contador usuarios fake
+      const minUsuarios = 78, maxUsuarios = 132;
+      const usuariosElemento = document.getElementById("usuarios-numero");
+      function actualizarUsuarios() {
+        const num = Math.floor(Math.random() * (maxUsuarios - minUsuarios + 1)) + minUsuarios;
+        usuariosElemento.textContent = num;
+      }
+      setInterval(actualizarUsuarios, 3000);
+      actualizarUsuarios();
+
+      // Notificaciones fake
+      const noti = document.getElementById("notificacion-premio");
+      const mensajes = [
+        "🎉 ¡Alguien ganó $25.000!",
+        "🎁 ¡Premio liberado de $10.000!",
+        "💸 ¡Jugador cobró $18.500!",
+        "🔥 ¡Ganancia de $32.000 confirmada!",
+        "🎊 ¡Nuevo ganador en Córdoba!",
+        "✅ ¡Transferencia enviada al instante!"
+      ];
+      function mostrarNoti() {
+        noti.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
+        noti.style.display = "block";
+        setTimeout(() => { noti.style.display = "none"; }, 4200);
+      }
+      setInterval(mostrarNoti, 9000);
+    });
   </script>
+
 </body>
 </html>
