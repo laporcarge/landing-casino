@@ -16,96 +16,44 @@
   <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){
-        n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
-      if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e);t.async=!0;
-      t.src=v;
-      s=b.getElementsByTagName(e)[0];
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
-    }(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '1863041204266352');
+    fbq('init', '1863041204266352'); // Pixel Luli
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/>
+         src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/>
   </noscript>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      color: white;
+      margin: 0; padding: 0;
+      font-family: 'Inter', sans-serif; color: white;
       background: url("img/fondo-2.avif") no-repeat center center fixed;
-      background-size: cover;
-      text-align: center;
+      background-size: cover; text-align: center;
     }
-
-    .logo img {
-      margin-top: 40px;
-      width: 230px;
-    }
-
-    .main-title {
-      margin: 30px 0;
-      font-family: 'Bebas Neue', sans-serif;
-    }
-
-    .main-title p {
-      font-size: 36px;
-      margin: 10px 0;
-      text-shadow: 0px 0px 8px rgba(0,0,0,0.6);
-    }
-
-    .wsp {
-      margin: 40px 0;
-    }
-
+    .logo img { margin-top: 40px; width: 230px; }
+    .main-title { margin: 30px 0; font-family: 'Bebas Neue', sans-serif; }
+    .main-title p { font-size: 36px; margin: 10px 0; text-shadow: 0 0 8px rgba(0,0,0,.6); }
+    .wsp { margin: 40px 0; }
     .go {
-      padding: 0.9em 2em;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      background-color: #25D366;
-      border: none;
-      border-radius: 12px;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      transition: transform 0.2s ease;
+      padding: .9em 2em; font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+      background-color: #25D366; border: none; border-radius: 12px; color: white;
+      cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.3);
+      display: inline-flex; align-items: center; gap: 12px; transition: transform .2s ease;
     }
-
-    .go:hover {
-      transform: scale(1.05);
-      background-color: #1ebc5a;
-    }
-
-    .go img {
-      width: 28px;
-      height: 28px;
-    }
-
-    .info-box {
-      margin-bottom: 60px;
-    }
-
-    .info-box p, .info-box h3 {
-      margin: 12px 0;
-      text-shadow: 0px 0px 6px rgba(0,0,0,0.5);
-    }
+    .go:hover { transform: scale(1.05); background-color: #1ebc5a; }
+    .go img { width: 28px; height: 28px; }
+    .info-box { margin-bottom: 60px; }
+    .info-box p, .info-box h3 { margin: 12px 0; text-shadow: 0 0 6px rgba(0,0,0,.5); }
   </style>
 </head>
 <body>
@@ -142,31 +90,73 @@
   </div>
 
   <script>
+    // --- helpers cookies para fbp/fbc
+    function getCookie(name) {
+      const m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+      return m ? m.pop() : "";
+    }
+    // si viene fbclid en la URL, genero _fbc compatible (dura 90 días)
+    (function ensureFbcFromFbclid(){
+      const params = new URLSearchParams(window.location.search);
+      const fbclid = params.get('fbclid');
+      if (fbclid && !getCookie('_fbc')) {
+        const fbc = `fb.1.${Date.now()}.${fbclid}`;
+        document.cookie = `_fbc=${fbc}; path=/; max-age=${60*60*24*90}`;
+      }
+    })();
+
+    async function sendCapiContact(value = 0, currency = "ARS") {
+      const fbp = getCookie('_fbp') || "";
+      const fbc = getCookie('_fbc') || "";
+      const event_id = `${Date.now()}-${Math.random().toString(36).slice(2)}`; // dedupe
+
+      // 1) Browser (Pixel) con el mismo event_id
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Contact', { value, currency }, { eventID: event_id });
+      }
+
+      // 2) Server (CAPI) via endpoint seguro
+      try {
+        await fetch('/api/meta-capi', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event_name: 'Contact',
+            event_source_url: location.href,
+            event_id,
+            fbp,
+            fbc,
+            value,
+            currency
+          })
+        });
+      } catch(e) {
+        console.warn('CAPI send error', e);
+      }
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       const trigger = document.getElementById("btn");
       if (trigger) {
-        trigger.addEventListener("click", function () {
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'Contact');
-          }
-          // Enlace actualizado con el nuevo número
+        trigger.addEventListener("click", async function () {
+          await sendCapiContact(0, 'ARS'); // dispara dedup (pixel + capi)
+
+          // Enlace actualizado con el nuevo número (tu base64)
           const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE4MDU1OTY2P3RleHQ9aG9sYSwlMjBxdWllcm8lMjB1bmElMjBjdWVudGEuJTIwTWklMjBub21icmVlJTIwZXMuLi4=";
           window.open(atob(encoded), "_blank");
         });
       }
 
-      const minUsuarios = 78;
-      const maxUsuarios = 132;
+      // --- fake users counter
+      const minUsuarios = 78, maxUsuarios = 132;
       const usuariosElemento = document.getElementById("usuarios-numero");
-
       function actualizarUsuarios() {
         const num = Math.floor(Math.random() * (maxUsuarios - minUsuarios + 1)) + minUsuarios;
         usuariosElemento.textContent = num;
       }
+      setInterval(actualizarUsuarios, 3000); actualizarUsuarios();
 
-      setInterval(actualizarUsuarios, 3000);
-      actualizarUsuarios();
-
+      // --- fake prizes notifications
       const noti = document.getElementById("notificacion-premio");
       const mensajes = [
         "🎉 ¡Alguien ganó $25.000!",
@@ -176,13 +166,11 @@
         "🎊 ¡Nuevo ganador en Córdoba!",
         "✅ ¡Transferencia enviada al instante!"
       ];
-
       function mostrarNoti() {
         noti.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
         noti.style.display = "block";
         setTimeout(() => { noti.style.display = "none"; }, 4200);
       }
-
       setInterval(mostrarNoti, 9000);
     });
   </script>
