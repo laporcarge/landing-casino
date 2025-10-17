@@ -90,12 +90,11 @@
 
   <!-- ===== CAPI + lógica de página ===== -->
   <script>
-    // Helpers cookies para fbp/fbc
     function getCookie(name) {
       const m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
       return m ? m.pop() : "";
     }
-    // Si llega fbclid en la URL, genero _fbc (requerido por CAPI)
+
     (function ensureFbcFromFbclid(){
       const fbclid = new URLSearchParams(location.search).get('fbclid');
       if (fbclid && !getCookie('_fbc')) {
@@ -104,18 +103,15 @@
       }
     })();
 
-    // Enviar evento Contact por Pixel + CAPI (dedup con event_id)
     async function sendCapiContact(value = 0, currency = 'ARS') {
       const fbp = getCookie('_fbp') || "";
       const fbc = getCookie('_fbc') || "";
       const event_id = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
-      // 1) Pixel (navegador) con mismo event_id
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Contact', { value, currency }, { eventID: event_id });
       }
 
-      // 2) Servidor (CAPI) via /api/meta-capi
       try {
         await fetch('/api/meta-capi', {
           method: 'POST',
@@ -139,16 +135,13 @@
       const trigger = document.getElementById("btn");
       if (trigger) {
         trigger.addEventListener("click", async function () {
-          // dispara contacto (pixel + capi)
           await sendCapiContact(0, 'ARS');
-
-          // Abre WhatsApp (mantengo tu enlace base64)
-          const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE4MDU1OTY2P3RleHQ9aG9sYSwlMjBxdWllcm8lMjB1bmElMjBjdWVudGEuJTIwTWklMjBub21icmVlJTIwZXMuLi4=";
+          // Enlace WhatsApp actualizado (formato internacional correcto)
+          const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE3Mzg2OTU1P3RleHQ9aG9sYSwlMjBxdWllcm8lMjB1bmElMjBjdWVudGEuJTIwTWklMjBub21icmVlJTIwZXMuLi4=";
           window.open(atob(encoded), "_blank");
         });
       }
 
-      // Contador usuarios fake
       const minUsuarios = 78, maxUsuarios = 132;
       const usuariosElemento = document.getElementById("usuarios-numero");
       function actualizarUsuarios() {
@@ -158,7 +151,6 @@
       setInterval(actualizarUsuarios, 3000);
       actualizarUsuarios();
 
-      // Notificaciones fake
       const noti = document.getElementById("notificacion-premio");
       const mensajes = [
         "🎉 ¡Alguien ganó $25.000!",
