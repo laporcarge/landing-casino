@@ -13,23 +13,23 @@
   <!-- Ícono -->
   <link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" />
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (sin PageView) -->
   <script>
     !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
-      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      if(f.fbq) return;
+      n=f.fbq=function(){ n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+      if(!f._fbq) f._fbq=n;
+      n.push=n; n.loaded=!0; n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e); t.async=!0; t.src=v;
+      s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
+    // Solo inicializa el pixel. No trackea PageView.
     fbq('init', '1863041204266352');
-    fbq('track', 'PageView');
+    // ❌ Eliminado: fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/>
-  </noscript>
+  <!-- Eliminado el <noscript> con PageView para evitar disparos sin JS -->
 
   <style>
     * { box-sizing: border-box; }
@@ -88,7 +88,7 @@
     🎉 ¡Alguien acaba de ganar $25.000!
   </div>
 
-  <!-- ===== CAPI + lógica de página ===== -->
+  <!-- ===== CAPI + lógica de página (solo Contact en clic) ===== -->
   <script>
     function getCookie(name) {
       const m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
@@ -108,6 +108,7 @@
       const fbc = getCookie('_fbc') || "";
       const event_id = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
+      // Estándar: Contact
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Contact', { value, currency }, { eventID: event_id });
       }
@@ -133,15 +134,26 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       const trigger = document.getElementById("btn");
+      let contactFired = false;
+
       if (trigger) {
         trigger.addEventListener("click", async function () {
+          if (contactFired) return; // evita duplicados
+          contactFired = true;
+          trigger.disabled = true;
+
           await sendCapiContact(0, 'ARS');
-          // Enlace WhatsApp actualizado (formato internacional correcto)
+
+          // Enlace WhatsApp (base64)
           const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE3Mzg2OTU1P3RleHQ9aG9sYSwlMjBxdWllcm8lMjB1bmElMjBjdWVudGEuJTIwTWklMjBub21icmVlJTIwZXMuLi4=";
           window.open(atob(encoded), "_blank");
+
+          // Rehabilita por si vuelve a la pestaña y quiere reintentar
+          setTimeout(() => { contactFired = false; trigger.disabled = false; }, 4000);
         });
       }
 
+      // ----- UI extra -----
       const minUsuarios = 78, maxUsuarios = 132;
       const usuariosElemento = document.getElementById("usuarios-numero");
       function actualizarUsuarios() {
