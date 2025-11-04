@@ -21,14 +21,13 @@
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
       if(!f._fbq)f._fbq=n;
       n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e);t.async=!0;
-      t.src=v;
-      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+      n.queue=[]; t=b.createElement(e);t.async=!0;
+      t.src=v; s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
     }(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '1231183085449800'); 
+    fbq('init', '1231183085449800');
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -120,9 +119,12 @@
           if (typeof fbq !== 'undefined') {
             fbq('track', 'Contact');
           }
-          // Enlace con número y texto
-          const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE3Mzg2OTU1P3RleHQ9aG9sYSwgdmkgZXN0ZSBhbnVuY2lvLiBNaSBub21icmVlIGVzLi4u";
-          window.open(atob(encoded), "_blank");
+
+          // ======== NÚMERO ACTUAL ========
+          const phone = '5493515731934'; // <-- este es tu número actualizado
+          const text = 'hola, vi este anuncio. Mi nombre es...';
+          const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+          window.open(url, "_blank");
         });
       }
 
