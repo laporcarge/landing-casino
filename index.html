@@ -12,7 +12,16 @@
 <link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" /> 
 <!-- Meta Pixel Code --> 
 <script> 
-!function(f,b,e,v,n,t,s){ if(f.fbq)return;n=f.fbq=function(){ n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[]; t=b.createElement(e);t.async=!0; t.src=v; s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s) }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1863041204266352'); fbq('track', 'PageView'); 
+!function(f,b,e,v,n,t,s){ if(f.fbq)return;n=f.fbq=function(){ 
+n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
+if(!f._fbq)f._fbq=n; 
+n.push=n;n.loaded=!0;n.version='2.0'; 
+n.queue=[]; t=b.createElement(e);t.async=!0; 
+t.src=v; s=b.getElementsByTagName(e)[0]; 
+s.parentNode.insertBefore(t,s) }(window, document,'script', 
+'https://connect.facebook.net/en_US/fbevents.js'); 
+fbq('init', '1863041204266352'); 
+fbq('track', 'PageView'); 
 </script> 
 <noscript> 
 <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/> 
@@ -46,20 +55,32 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; color: white; ba
 <p>Mínimo de carga: $2.000</p> 
 <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3> 
 </div> 
+
 <!-- Contador de usuarios falsos --> 
-<div id="contador-falso" style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 12px 18px; border-radius: 10px; font-size: 16px; z-index: 9999;"> Usuarios conectados: <span id="usuarios-numero"></span> </div> 
+<div id="contador-falso" style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 12px 18px; border-radius: 10px; font-size: 16px; z-index: 9999;"> 
+Usuarios conectados: <span id="usuarios-numero"></span> 
+</div> 
+
 <!-- Notificaciones de premios --> 
-<div id="notificacion-premio" style="position: fixed; top: 20px; right: 20px; background: #1ebc5a; color: white; padding: 14px 20px; border-radius: 12px; font-weight: bold; font-size: 15px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"> 🎉 ¡Alguien acaba de ganar $25.000! </div> 
+<div id="notificacion-premio" style="position: fixed; top: 20px; right: 20px; background: #1ebc5a; color: white; padding: 14px 20px; border-radius: 12px; font-weight: bold; font-size: 15px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"> 
+🎉 ¡Alguien acaba de ganar $25.000! 
+</div> 
+
 <script> 
 document.addEventListener("DOMContentLoaded", function () { 
+
   const trigger = document.getElementById("btn"); 
   if (trigger) { 
     trigger.addEventListener("click", function () { 
       if (typeof fbq !== 'undefined') { fbq('track', 'Contact'); } 
-      const encoded = "aHR0cHM6Ly93YS5tZS81NDkyMjM1MzM4MDQ3P3RleHQ9SG9sYSwgcXVpZXJvIHVuIHVzdWFyaW8uIE1pIG5vbWJyZSBlcy4uLg=="; 
+
+      // 🔥 NUEVO LINK (solo se cambió el número)
+      const encoded = "aHR0cHM6Ly93YS5tZS81NDkyMjM1MzM4MDc4P3RleHQ9SG9sYSwgcXVpZXJvIHVuIHVzdWFyaW8uIE1pIG5vbWJyZSBlcy4uLg=="; 
+      
       window.open(atob(encoded), "_blank"); 
     }); 
   } 
+
   // Contador de usuarios falsos 
   const minUsuarios = 78; 
   const maxUsuarios = 132; 
@@ -70,9 +91,17 @@ document.addEventListener("DOMContentLoaded", function () {
   } 
   setInterval(actualizarUsuarios, 3000); 
   actualizarUsuarios(); 
-  // Notificaciones falsas de premios 
+
+  // Notificaciones falsas 
   const noti = document.getElementById("notificacion-premio"); 
-  const mensajes = [ "🎉 ¡Alguien ganó $25.000!", "🎁 ¡Premio liberado de $10.000!", "💸 ¡Jugador cobró $18.500!", "🔥 ¡Ganancia de $32.000 confirmada!", "🎊 ¡Nuevo ganador en Córdoba!", "✅ ¡Transferencia enviada al instante!" ]; 
+  const mensajes = [ 
+    "🎉 ¡Alguien ganó $25.000!", 
+    "🎁 ¡Premio liberado de $10.000!", 
+    "💸 ¡Jugador cobró $18.500!", 
+    "🔥 ¡Ganancia de $32.000 confirmada!", 
+    "🎊 ¡Nuevo ganador en Córdoba!", 
+    "✅ ¡Transferencia enviada al instante!" 
+  ]; 
   function mostrarNoti() { 
     noti.textContent = mensajes[Math.floor(Math.random() * mensajes.length)]; 
     noti.style.display = "block"; 
