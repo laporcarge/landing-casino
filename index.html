@@ -74,14 +74,13 @@ document.addEventListener("DOMContentLoaded", function () {
     trigger.addEventListener("click", function () { 
       if (typeof fbq !== 'undefined') { fbq('track', 'Contact'); } 
 
-      // 🔥 NUEVO LINK (solo se cambió el número 2235338047)
-      const encoded = "aHR0cHM6Ly93YS5tZS81NDkyMjM1MzM4MDQ3P3RleHQ9SG9sYSwgcXVpZXJvIHVuIHVzdWFyaW8uIE1pIG5vbWJyZSBlcy4uLg=="; 
+      // 🔥 NUEVO LINK con el número 3515731934
+      const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE1NzMxOTM0P3RleHQ9SG9sYSwgcXVpZXJvIHVuIHVzdWFyaW8uIE1pIG5vbWJyZSBlcy4uLg=="; 
       
       window.open(atob(encoded), "_blank"); 
     }); 
   } 
 
-  // Contador de usuarios falsos 
   const minUsuarios = 78; 
   const maxUsuarios = 132; 
   const usuariosElemento = document.getElementById("usuarios-numero"); 
@@ -92,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(actualizarUsuarios, 3000); 
   actualizarUsuarios(); 
 
-  // Notificaciones falsas 
   const noti = document.getElementById("notificacion-premio"); 
   const mensajes = [ 
     "🎉 ¡Alguien ganó $25.000!", 
