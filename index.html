@@ -61,12 +61,10 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; color: white; ba
 <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3> 
 </div> 
 
-<!-- Contador de usuarios falsos --> 
 <div id="contador-falso" style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 12px 18px; border-radius: 10px; font-size: 16px; z-index: 9999;"> 
 Usuarios conectados: <span id="usuarios-numero"></span> 
 </div> 
 
-<!-- Notificaciones de premios --> 
 <div id="notificacion-premio" style="position: fixed; top: 20px; right: 20px; background: #1ebc5a; color: white; padding: 14px 20px; border-radius: 12px; font-weight: bold; font-size: 15px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"> 
 🎉 ¡Alguien acaba de ganar $25.000! 
 </div> 
@@ -79,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     trigger.addEventListener("click", function () { 
       if (typeof fbq !== 'undefined') { fbq('track', 'Contact'); } 
 
-      const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE4MTQxMzUyP3RleHQ9SG9sYSUyQyUyMHF1aWVybyUyMGluZm9ybWFjacOzbi4lMjBNaSUyMG5vbWJyZSUyMGVzJTIw";
+      const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE4MTQxMzUyP3RleHQ9SG9sYSwlMjBxdWllcm8lMjBpbmZvcm1hY2klQzMlQjNuLiUyME1pJTIwbm9tYnJlJTIwZXMlMjA=";
       window.open(atob(encoded), "_blank"); 
     }); 
   } 
