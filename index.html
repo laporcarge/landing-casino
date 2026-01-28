@@ -4,174 +4,114 @@
 <meta charset="UTF-8" /> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
 <title>Ganamos</title> 
-
 <!-- Google Fonts --> 
 <link rel="preconnect" href="https://fonts.googleapis.com" /> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" /> 
-
 <!-- Ícono --> 
 <link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" /> 
-
-<!-- Meta Pixel Code --> 
+<!-- Meta Pixel Code -->
 <script> 
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){ 
-n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
-n.queue=[];t=b.createElement(e);t.async=!0; 
-t.src=v;s=b.getElementsByTagName(e)[0]; 
-s.parentNode.insertBefore(t,s)}(window, document,'script', 
+!function(f,b,e,v,n,t,s){ if(f.fbq)return;n=f.fbq=function(){ 
+n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
+if(!f._fbq)f._fbq=n; 
+n.push=n;n.loaded=!0;n.version='2.0'; 
+n.queue=[]; t=b.createElement(e);t.async=!0; 
+t.src=v; s=b.getElementsByTagName(e)[0]; 
+s.parentNode.insertBefore(t,s) }(window, document,'script', 
 'https://connect.facebook.net/en_US/fbevents.js'); 
 fbq('init', '1863041204266352'); 
 fbq('track', 'PageView'); 
 </script> 
-
 <noscript> 
-<img height="1" width="1" style="display:none" 
-src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/> 
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/> 
 </noscript> 
 
 <style> 
 * { box-sizing: border-box; } 
-body { 
-  margin: 0; 
-  padding: 0; 
-  font-family: 'Inter', sans-serif; 
-  color: white; 
-  background: url("img/fondo-2.avif") no-repeat center center fixed; 
-  background-size: cover; 
-  text-align: center; 
-} 
+body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; color: white; background: url("img/fondo-2.avif") no-repeat center center fixed; background-size: cover; text-align: center; } 
 .logo img { margin-top: 40px; width: 230px; } 
 .main-title { margin: 30px 0; font-family: 'Bebas Neue', sans-serif; } 
-.main-title p { 
-  font-size: 36px; 
-  margin: 10px 0; 
-  text-shadow: 0px 0px 8px rgba(0,0,0,0.6); 
-} 
+.main-title p { font-size: 36px; margin: 10px 0; text-shadow: 0px 0px 8px rgba(0,0,0,0.6); } 
 .wsp { margin: 40px 0; } 
-.go { 
-  padding: 0.9em 2em; 
-  font-family: 'Bebas Neue', sans-serif; 
-  font-size: 28px; 
-  background-color: #25D366; 
-  border: none; 
-  border-radius: 12px; 
-  color: white; 
-  cursor: pointer; 
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3); 
-  display: inline-flex; 
-  align-items: center; 
-  gap: 12px; 
-  transition: transform 0.2s ease; 
-} 
+.go { padding: 0.9em 2em; font-family: 'Bebas Neue', sans-serif; font-size: 28px; background-color: #25D366; border: none; border-radius: 12px; color: white; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,0.3); display: inline-flex; align-items: center; gap: 12px; transition: transform 0.2s ease; } 
 .go:hover { transform: scale(1.05); background-color: #1ebc5a; } 
 .go img { width: 28px; height: 28px; } 
 .info-box { margin-bottom: 60px; } 
-.info-box p, .info-box h3 { 
-  margin: 12px 0; 
-  text-shadow: 0px 0px 6px rgba(0,0,0,0.5); 
-} 
+.info-box p, .info-box h3 { margin: 12px 0; text-shadow: 0px 0px 6px rgba(0,0,0,0.5); } 
 </style> 
 </head> 
 
 <body> 
-
 <div class="logo"> 
-  <img src="img/logo%20casss.png" alt="Logo" /> 
+<img src="img/logo%20casss.png" alt="Logo" /> 
 </div> 
 
 <div class="main-title"> 
-  <p>HACÉ CLICK EN CONTACTARSE</p> 
-  <p>Y COMENZÁ A GANAR</p> 
+<p>HACÉ CLICK EN CONTACTARSE</p> 
+<p>Y COMENZÁ A GANAR</p> 
 </div> 
 
 <div class="wsp"> 
-  <button class="go" id="btn">
-    CONTACTARSE 
-    <img src="img/whatsapp.png" alt="WhatsApp" />
-  </button> 
+<button class="go" id="btn"> CONTACTARSE <img src="img/whatsapp.png" alt="W" /> </button> 
 </div> 
 
 <div class="info-box"> 
-  <p>Mínimo de carga: $2.000</p> 
-  <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3> 
+<p>Mínimo de carga: $2.000</p> 
+<h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3> 
 </div> 
 
 <!-- Contador de usuarios falsos --> 
-<div id="contador-falso" style="
-position: fixed;
-bottom: 20px;
-left: 20px;
-background: rgba(0,0,0,0.7);
-padding: 12px 18px;
-border-radius: 10px;
-font-size: 16px;
-z-index: 9999;">
+<div id="contador-falso" style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 12px 18px; border-radius: 10px; font-size: 16px; z-index: 9999;"> 
 Usuarios conectados: <span id="usuarios-numero"></span> 
 </div> 
 
 <!-- Notificaciones de premios --> 
-<div id="notificacion-premio" style="
-position: fixed;
-top: 20px;
-right: 20px;
-background: #1ebc5a;
-color: white;
-padding: 14px 20px;
-border-radius: 12px;
-font-weight: bold;
-font-size: 15px;
-display: none;
-z-index: 9999;
-box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-🎉 ¡Alguien acaba de ganar $25.000!
+<div id="notificacion-premio" style="position: fixed; top: 20px; right: 20px; background: #1ebc5a; color: white; padding: 14px 20px; border-radius: 12px; font-weight: bold; font-size: 15px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"> 
+🎉 ¡Alguien acaba de ganar $25.000! 
 </div> 
 
 <script> 
 document.addEventListener("DOMContentLoaded", function () { 
 
-  const trigger = document.getElementById("btn"); 
-  if (trigger) { 
-    trigger.addEventListener("click", function () { 
-      if (typeof fbq !== 'undefined') { fbq('track', 'Contact'); } 
+  const trigger = document.getElementById("btn"); 
+  if (trigger) { 
+    trigger.addEventListener("click", function () { 
+      if (typeof fbq !== 'undefined') { fbq('track', 'Contact'); } 
 
-      // WhatsApp +54 9 3518 05-6067
-      const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE4MDU2MDY3P3RleHQ9aG9sYS4gcXVpZXJvIG1pIGN1ZW50YSwgbWkgbm9tYnJlIGVzLi4u";
+      // Número NUEVO 3518141352
+      const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE4MTQxMzUyP3RleHQ9aG9sYS4gcXVpZXJvIG1pIGN1ZW50YSwgbWkgbm9tYnJlIGVzLi4u";
 
-      window.open(atob(encoded), "_blank"); 
-    }); 
-  } 
+      window.open(atob(encoded), "_blank"); 
+    }); 
+  } 
 
-  const minUsuarios = 78; 
-  const maxUsuarios = 132; 
-  const usuariosElemento = document.getElementById("usuarios-numero"); 
+  const minUsuarios = 78; 
+  const maxUsuarios = 132; 
+  const usuariosElemento = document.getElementById("usuarios-numero"); 
+  function actualizarUsuarios() { 
+    const num = Math.floor(Math.random() * (maxUsuarios - minUsuarios + 1)) + minUsuarios; 
+    usuariosElemento.textContent = num; 
+  } 
+  setInterval(actualizarUsuarios, 3000); 
+  actualizarUsuarios(); 
 
-  function actualizarUsuarios() { 
-    const num = Math.floor(Math.random() * (maxUsuarios - minUsuarios + 1)) + minUsuarios; 
-    usuariosElemento.textContent = num; 
-  } 
-  setInterval(actualizarUsuarios, 3000); 
-  actualizarUsuarios(); 
-
-  const noti = document.getElementById("notificacion-premio"); 
-  const mensajes = [ 
-    "🎉 ¡Alguien ganó $25.000!", 
-    "🎁 ¡Premio liberado de $10.000!", 
-    "💸 ¡Jugador cobró $18.500!", 
-    "🔥 ¡Ganancia de $32.000 confirmada!", 
-    "🎊 ¡Nuevo ganador en Córdoba!", 
-    "✅ ¡Transferencia enviada al instante!" 
-  ]; 
-
-  function mostrarNoti() { 
-    noti.textContent = mensajes[Math.floor(Math.random() * mensajes.length)]; 
-    noti.style.display = "block"; 
-    setTimeout(() => { noti.style.display = "none"; }, 4200); 
-  } 
-  setInterval(mostrarNoti, 9000); 
+  const noti = document.getElementById("notificacion-premio"); 
+  const mensajes = [ 
+    "🎉 ¡Alguien ganó $25.000!", 
+    "🎁 ¡Premio liberado de $10.000!", 
+    "💸 ¡Jugador cobró $18.500!", 
+    "🔥 ¡Ganancia de $32.000 confirmada!", 
+    "🎊 ¡Nuevo ganador en Córdoba!", 
+    "✅ ¡Transferencia enviada al instante!" 
+  ]; 
+  function mostrarNoti() { 
+    noti.textContent = mensajes[Math.floor(Math.random() * mensajes.length)]; 
+    noti.style.display = "block"; 
+    setTimeout(() => { noti.style.display = "none"; }, 4200); 
+  } 
+  setInterval(mostrarNoti, 9000); 
 }); 
 </script> 
-
 </body> 
 </html>
