@@ -1,269 +1,119 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ganamos</title>
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<title>Ganamos</title> 
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+<link rel="preconnect" href="https://fonts.googleapis.com" /> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" /> 
 
-  <!-- Ícono -->
-  <link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" />
+<link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" /> 
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;
-      n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;
-      n.push=n;
-      n.loaded=!0;
-      n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e);
-      t.async=!0;
-      t.src=v;
-      s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<!-- Meta Pixel -->
+<script> 
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){ 
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
+n.queue=[];t=b.createElement(e);t.async=!0; 
+t.src=v;s=b.getElementsByTagName(e)[0]; 
+s.parentNode.insertBefore(t,s)}(window,document,'script', 
+'https://connect.facebook.net/en_US/fbevents.js'); 
+fbq('init','1863041204266352'); 
+fbq('track','PageView'); 
+</script> 
 
-    fbq('init', '1863041204266352');
-    fbq('track', 'PageView');
-  </script>
+<noscript> 
+<img height="1" width="1" style="display:none" 
+src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/> 
+</noscript> 
 
-  <noscript>
-    <img
-      height="1"
-      width="1"
-      style="display:none"
-      src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"
-      alt=""
-    />
-  </noscript>
+<style> 
+*{box-sizing:border-box;} 
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+body{ 
+margin:0; 
+padding:0; 
+font-family:'Inter',sans-serif; 
+color:white; 
+background:url("img/fondo-2.avif") no-repeat center center fixed; 
+background-size:cover; 
+text-align:center; 
+} 
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      color: white;
-      background: url("img/fondo-2.avif") no-repeat center center fixed;
-      background-size: cover;
-      text-align: center;
-      min-height: 100vh;
-      position: relative;
-    }
+.logo img{margin-top:40px;width:230px;} 
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: 0;
-    }
+.main-title{margin:30px 0;font-family:'Bebas Neue',sans-serif;} 
 
-    .wrap {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 24px 20px 40px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.main-title p{ 
+font-size:36px; 
+margin:10px 0; 
+text-shadow:0px 0px 8px rgba(0,0,0,0.6); 
+} 
 
-    .logo img {
-      margin-top: 8px;
-      width: 210px;
-      max-width: 80%;
-      height: auto;
-    }
+.wsp{margin:40px 0;} 
 
-    .main-title {
-      margin: 24px 0 14px;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 0.5px;
-    }
+.go{ 
+padding:0.9em 2em; 
+font-family:'Bebas Neue',sans-serif; 
+font-size:28px; 
+background-color:#25D366; 
+border:none; 
+border-radius:12px; 
+color:white; 
+cursor:pointer; 
+box-shadow:0 6px 18px rgba(0,0,0,0.3); 
+display:inline-flex; 
+align-items:center; 
+gap:12px; 
+transition:transform 0.2s ease; 
+text-decoration:none; 
+} 
 
-    .main-title p {
-      font-size: 42px;
-      line-height: 0.95;
-      margin: 8px 0;
-      text-shadow: 0 0 10px rgba(0,0,0,0.55);
-    }
+.go:hover{ 
+transform:scale(1.05); 
+background-color:#1ebc5a; 
+} 
 
-    .subtext {
-      margin: 0 auto 18px;
-      max-width: 460px;
-      font-size: 17px;
-      line-height: 1.5;
-      text-shadow: 0 0 8px rgba(0,0,0,0.45);
-    }
+.go img{width:28px;height:28px;} 
 
-    .benefits {
-      margin: 0 auto 24px;
-      width: 100%;
-      max-width: 420px;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(3px);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 18px 18px 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    }
+.info-box{margin-bottom:60px;} 
 
-    .benefits p {
-      margin: 8px 0;
-      font-size: 16px;
-      font-weight: 600;
-      text-shadow: 0 0 6px rgba(0,0,0,0.4);
-    }
+.info-box p,.info-box h3{ 
+margin:12px 0; 
+text-shadow:0px 0px 6px rgba(0,0,0,0.5); 
+} 
+</style> 
+</head> 
 
-    .cta-box {
-      margin-top: 6px;
-    }
+<body> 
 
-    .cta-note {
-      margin: 0 0 14px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #f3f3f3;
-      text-shadow: 0 0 6px rgba(0,0,0,0.45);
-    }
+<div class="logo"> 
+<img src="img/logo%20casss.png" alt="Logo"/> 
+</div> 
 
-    .go {
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto;
-      padding: 16px 22px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 30px;
-      letter-spacing: 0.8px;
-      background-color: #25D366;
-      border: none;
-      border-radius: 14px;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      text-decoration: none;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
+<div class="main-title"> 
+<p>HACÉ CLICK EN CONTACTARSE</p> 
+<p>Y COMENZÁ A GANAR</p> 
+</div> 
 
-    .go:hover {
-      transform: scale(1.03);
-      background-color: #1ebc5a;
-    }
+<div class="wsp"> 
+<a class="go"
+href="https://wa.me/5493518141352?text=Hola%2C%20quiero%20informaci%C3%B3n."
+target="_blank"
+onclick="fbq('track','Contact');">
 
-    .go img {
-      width: 28px;
-      height: 28px;
-    }
+CONTACTARSE 
+<img src="img/whatsapp.png" alt="W"/>
 
-    .mini-text {
-      margin-top: 14px;
-      font-size: 13px;
-      opacity: 0.95;
-      text-shadow: 0 0 6px rgba(0,0,0,0.4);
-    }
+</a> 
+</div> 
 
-    @media (max-width: 480px) {
-      .wrap {
-        padding: 18px 16px 30px;
-        justify-content: center;
-      }
+<div class="info-box"> 
+<p>Mínimo de carga: $4.000</p> 
+<h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3> 
+</div> 
 
-      .logo img {
-        width: 180px;
-      }
-
-      .main-title p {
-        font-size: 34px;
-      }
-
-      .subtext {
-        font-size: 15px;
-      }
-
-      .benefits p {
-        font-size: 15px;
-      }
-
-      .go {
-        font-size: 27px;
-        padding: 15px 18px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <div class="logo">
-      <img src="img/logo%20casss.png" alt="Logo" />
-    </div>
-
-    <div class="main-title">
-      <p>ENTRÁ POR WHATSAPP</p>
-      <p>Y EMPEZÁ A JUGAR</p>
-    </div>
-
-    <p class="subtext">
-      Atención directa por WhatsApp para que puedas ingresar rápido y recibir la información completa.
-    </p>
-
-    <div class="benefits">
-      <p>💰 Carga mínima: $2.000</p>
-      <p>⚡ Atención rápida</p>
-      <p>🔒 Acceso simple y directo</p>
-    </div>
-
-    <div class="cta-box">
-      <p class="cta-note">Tocá el botón y se abre el chat directo</p>
-
-      <a
-        class="go"
-        id="btn"
-        href="https://wa.me/5493518141352?text=Hola%2C%20quiero%20informaci%C3%B3n."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        HABLAR POR WHATSAPP
-        <img src="img/whatsapp.png" alt="WhatsApp" />
-      </a>
-
-      <p class="mini-text">Disponible desde celular y WhatsApp Web</p>
-    </div>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const trigger = document.getElementById("btn");
-
-      if (trigger) {
-        trigger.addEventListener("click", function () {
-          if (typeof fbq !== "undefined") {
-            fbq('track', 'Contact');
-          }
-        });
-      }
-    });
-  </script>
-</body>
+</body> 
 </html>
