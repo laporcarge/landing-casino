@@ -1,119 +1,134 @@
-<!DOCTYPE html> 
-<html lang="es"> 
-<head> 
-<meta charset="UTF-8" /> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-<title>Ganamos</title> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ganamos</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" /> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" /> 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-<link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" /> 
+<link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" />
 
 <!-- Meta Pixel -->
-<script> 
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){ 
-n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
-n.queue=[];t=b.createElement(e);t.async=!0; 
-t.src=v;s=b.getElementsByTagName(e)[0]; 
-s.parentNode.insertBefore(t,s)}(window,document,'script', 
-'https://connect.facebook.net/en_US/fbevents.js'); 
-fbq('init','1863041204266352'); 
-fbq('track','PageView'); 
-</script> 
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;
+n=f.fbq=function(){
+n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+};
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-<noscript> 
-<img height="1" width="1" style="display:none" 
-src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/> 
-</noscript> 
+fbq('init','1863041204266352');
+fbq('track','PageView');
 
-<style> 
-*{box-sizing:border-box;} 
+function trackWhatsAppContact() {
+  fbq('track', 'Contact');
+}
+</script>
 
-body{ 
-margin:0; 
-padding:0; 
-font-family:'Inter',sans-serif; 
-color:white; 
-background:url("img/fondo-2.avif") no-repeat center center fixed; 
-background-size:cover; 
-text-align:center; 
-} 
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/>
+</noscript>
 
-.logo img{margin-top:40px;width:230px;} 
+<style>
+*{box-sizing:border-box;}
 
-.main-title{margin:30px 0;font-family:'Bebas Neue',sans-serif;} 
+body{
+margin:0;
+padding:0;
+font-family:'Inter',sans-serif;
+color:white;
+background:url("img/fondo-2.avif") no-repeat center center fixed;
+background-size:cover;
+text-align:center;
+}
 
-.main-title p{ 
-font-size:36px; 
-margin:10px 0; 
-text-shadow:0px 0px 8px rgba(0,0,0,0.6); 
-} 
+.logo img{margin-top:40px;width:230px;}
 
-.wsp{margin:40px 0;} 
+.main-title{margin:30px 0;font-family:'Bebas Neue',sans-serif;}
 
-.go{ 
-padding:0.9em 2em; 
-font-family:'Bebas Neue',sans-serif; 
-font-size:28px; 
-background-color:#25D366; 
-border:none; 
-border-radius:12px; 
-color:white; 
-cursor:pointer; 
-box-shadow:0 6px 18px rgba(0,0,0,0.3); 
-display:inline-flex; 
-align-items:center; 
-gap:12px; 
-transition:transform 0.2s ease; 
-text-decoration:none; 
-} 
+.main-title p{
+font-size:36px;
+margin:10px 0;
+text-shadow:0px 0px 8px rgba(0,0,0,0.6);
+}
 
-.go:hover{ 
-transform:scale(1.05); 
-background-color:#1ebc5a; 
-} 
+.wsp{margin:40px 0;}
 
-.go img{width:28px;height:28px;} 
+.go{
+padding:0.9em 2em;
+font-family:'Bebas Neue',sans-serif;
+font-size:28px;
+background-color:#25D366;
+border:none;
+border-radius:12px;
+color:white;
+cursor:pointer;
+box-shadow:0 6px 18px rgba(0,0,0,0.3);
+display:inline-flex;
+align-items:center;
+gap:12px;
+transition:transform 0.2s ease;
+text-decoration:none;
+}
 
-.info-box{margin-bottom:60px;} 
+.go:hover{
+transform:scale(1.05);
+background-color:#1ebc5a;
+}
 
-.info-box p,.info-box h3{ 
-margin:12px 0; 
-text-shadow:0px 0px 6px rgba(0,0,0,0.5); 
-} 
-</style> 
-</head> 
+.go img{width:28px;height:28px;}
 
-<body> 
+.info-box{margin-bottom:60px;}
 
-<div class="logo"> 
-<img src="img/logo%20casss.png" alt="Logo"/> 
-</div> 
+.info-box p,.info-box h3{
+margin:12px 0;
+text-shadow:0px 0px 6px rgba(0,0,0,0.5);
+}
+</style>
+</head>
 
-<div class="main-title"> 
-<p>HACÉ CLICK EN CONTACTARSE</p> 
-<p>Y COMENZÁ A GANAR</p> 
-</div> 
+<body>
 
-<div class="wsp"> 
-<a class="go"
+<div class="logo">
+<img src="img/logo%20casss.png" alt="Logo"/>
+</div>
+
+<div class="main-title">
+<p>HACÉ CLICK EN CONTACTARSE</p>
+<p>Y COMENZÁ A GANAR</p>
+</div>
+
+<div class="wsp">
+<a
+class="go"
 href="https://wa.me/5493518055964?text=Hola%2C%20quiero%20informaci%C3%B3n."
 target="_blank"
-onclick="fbq('track','Contact');">
-
-CONTACTARSE 
+rel="noopener noreferrer"
+onclick="trackWhatsAppContact();"
+>
+CONTACTARSE
 <img src="img/whatsapp.png" alt="W"/>
+</a>
+</div>
 
-</a> 
-</div> 
+<div class="info-box">
+<p>Mínimo de carga: $4.000</p>
+<h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3>
+</div>
 
-<div class="info-box"> 
-<p>Mínimo de carga: $4.000</p> 
-<h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3> 
-</div> 
-
-</body> 
+</body>
 </html>
