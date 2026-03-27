@@ -3,145 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ganamos</title>
+  <title>Empire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Ícono -->
-  <link rel="shortcut icon" href="img/logo casss.png" type="image/x-icon" />
-
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (SIN CAMBIOS) -->
   <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){
-        n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e);t.async=!0;
-      t.src=v;
-      s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', '1863041204266352');
-    fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1863041204266352');
+  fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/>
-  </noscript>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      color: white;
-      background: url("img/fondo-2.avif") no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
       text-align: center;
+      background-color: #000;
+      padding: 20px;
     }
 
-    .logo img {
-      margin-top: 40px;
-      width: 230px;
+    .whatsapp-logo {
+      width: 40px;
+      vertical-align: middle;
     }
 
-    .main-title {
-      margin: 30px 0;
-      font-family: 'Bebas Neue', sans-serif;
-    }
-
-    .main-title p {
-      font-size: 36px;
+    h1 {
+      color: #25D366;
+      font-size: 2rem;
       margin: 10px 0;
-      text-shadow: 0px 0px 8px rgba(0,0,0,0.6);
     }
 
-    .wsp {
-      margin: 40px 0;
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #8A2BE2;
+      margin: 20px auto;
+      object-fit: cover;
+      background-color: #fff;
     }
 
-    .go {
-      padding: 0.9em 2em;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      background-color: #25D366;
+    .title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #8A2BE2;
+    }
+
+    .subtitle {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 15px 25px;
+      background: linear-gradient(90deg, #00c853, #00e676);
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
       border: none;
-      border-radius: 12px;
-      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00e676;
+      text-decoration: none;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      transition: transform 0.2s ease;
     }
 
-    .go:hover {
+    .cta-button:hover {
       transform: scale(1.05);
       background-color: #1ebc5a;
     }
 
-    .go img {
-      width: 28px;
-      height: 28px;
+    .footer-links {
+      font-size: 0.9rem;
+      color: #25D366;
+      margin-top: 10px;
     }
 
-    .info-box {
-      margin-bottom: 60px;
+    .winners-section {
+      margin-top: 40px;
+      text-align: center;
     }
 
-    .info-box p, .info-box h3 {
-      margin: 12px 0;
-      text-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+    .winner-card {
+      background-color: rgba(230,255,238,0.1);
+      border-radius: 12px;
+      padding: 15px;
+      margin: 10px auto;
+      max-width: 400px;
+      border: 1px solid #25D366;
+    }
+
+    .winner-name {
+      color: #00e676;
+      font-weight: bold;
+    }
+
+    .winner-amount {
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <img class="whatsapp-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  <h1>WhatsApp</h1>
 
-  <div class="logo">
-    <img src="img/logo casss.png" alt="Logo" />
+  <img class="logo" src="empire.jpg" alt="Logo Red Empire" />
+
+  <div class="title">RED EMPIRE </div>
+  <div class="subtitle">Bono de bienvenida (CON CARGA)</div>
+  <div class="subtitle">Carga mínima: $2000</div>
+
+  <a class="cta-button" id="btn-wa" href="https://wa.me/5493518055964">¡CREAR USUARIO AHORA!</a>
+
+  <div class="footer-links">
+    ¿Aún no tienes WhatsApp? <a href="https://www.whatsapp.com/download" target="_blank">Descargar</a><br>
+    <a href="#">Términos y condiciones</a> | <a href="#">Política de privacidad</a>
   </div>
 
-  <div class="main-title">
-    <p>HACÉ CLICK EN CONTACTARSE</p>
-    <p>Y COMENZÁ A GANAR</p>
+  <div class="winners-section">
+    <h3 style="color: #25D366;">“Excelente” ★★★★★ Calificación 4.9/5 en ★ Trustpilot</h3>
+
+    <div class="winner-card">
+      <div class="winner-name">Roberto Pérez</div>
+      🥇 <span class="winner-amount">Ganador de $100.000</span><br>
+      Desde La Plata • hace 10 minutos
+    </div>
+
+    <div class="winner-card">
+      <div class="winner-name">Mariana Gómez</div>
+      🥇 <span class="winner-amount">Ganadora de $350.000</span><br>
+      Desde Córdoba • hace 22 minutos
+    </div>
+
+    <div class="winner-card">
+      <div class="winner-name">Lucas Fernández</div>
+      🥇 <span class="winner-amount">Ganador de $630.000</span><br>
+      Desde Rosario • hace 45 minutos
+    </div>
+
+    <div class="winner-card">
+      <div class="winner-name">Sofía Martínez</div>
+      🥇 <span class="winner-amount">Ganadora de $200.000</span><br>
+      Desde Mendoza • hace 1 hora
+    </div>
   </div>
 
-  <div class="wsp">
-    <button class="go" id="btn">
-      CONTACTARSE
-      <img src="img/whatsapp.png" alt="W" />
-    </button>
+  <!-- Contador de usuarios -->
+  <div id="contador-falso" style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 12px 18px; border-radius: 10px; font-size: 16px; z-index: 9999; color:#fff;">
+    Usuarios conectados: <span id="usuarios-numero"></span>
   </div>
 
-  <div class="info-box">
-    <p>Mínimo de carga: $2.000</p>
-    <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3>
+  <!-- Notificaciones de premios -->
+  <div id="notificacion-premio" style="position: fixed; top: 20px; right: 20px; background: #1ebc5a; color: white; padding: 14px 20px; border-radius: 12px; font-weight: bold; font-size: 15px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+    🎉 ¡Alguien acaba de ganar $25.000!
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const trigger = document.getElementById("btn");
+      const trigger = document.getElementById("btn-wa");
       if (trigger) {
-        trigger.addEventListener("click", function () {
+        trigger.addEventListener("click", function (e) {
           if (typeof fbq !== 'undefined') {
             fbq('track', 'Contact');
           }
-          const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE1NzM3OTY5P3RleHQ9wqFIb2xhISBWaSBlc3RlIGFudW5jaW8sIHF1aWVybyB1biB1c3VhcmlvLg==";
-          window.open(atob(encoded), "_blank");
+          const base = trigger.getAttribute('href') || '';
+          const joiner = base.includes('?') ? '&' : '?';
+          const url = base + joiner + 'text=' + encodeURIComponent('Hola, quiero crear mi usuario en RED EMPIRE.');
+          e.preventDefault();
+          window.open(url, '_blank');
         });
+      }
+
+      const usuariosElemento = document.getElementById("usuarios-numero");
+      if (usuariosElemento) {
+        const minUsuarios = 78, maxUsuarios = 132;
+        function actualizarUsuarios() {
+          const num = Math.floor(Math.random() * (maxUsuarios - minUsuarios + 1)) + minUsuarios;
+          usuariosElemento.textContent = num;
+        }
+        actualizarUsuarios();
+        setInterval(actualizarUsuarios, 3000);
+      }
+
+      const noti = document.getElementById("notificacion-premio");
+      if (noti) {
+        const mensajes = [
+          "🎉 ¡Alguien ganó $25.000!",
+          "🎁 ¡Premio liberado de $10.000!",
+          "💸 ¡Jugador cobró $18.500!",
+          "🔥 ¡Ganancia de $32.000 confirmada!",
+          "🎊 ¡Nuevo ganador en Córdoba!",
+          "✅ ¡Transferencia enviada al instante!"
+        ];
+        function mostrarNoti() {
+          noti.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
+          noti.style.display = "block";
+          setTimeout(() => { noti.style.display = "none"; }, 4200);
+        }
+        setInterval(mostrarNoti, 9000);
       }
     });
   </script>
