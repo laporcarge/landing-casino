@@ -6,10 +6,9 @@
   <title>Empire</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   
-  <!-- Favicon -->
   <link rel="shortcut icon" href="img/logo%20casss.png" type="image/x-icon" />
 
-  <!-- Meta Pixel Code (SIN CAMBIOS) -->
+  <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,12 +18,15 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1863041204266352');
+
+  fbq('init', '1636099344198092'); // PIXEL NUEVO
   fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"
-  /></noscript>
+
+  <noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1636099344198092&ev=PageView&noscript=1"/>
+  </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
@@ -88,137 +90,42 @@
       transform: scale(1.05);
       background-color: #1ebc5a;
     }
-
-    .footer-links {
-      font-size: 0.9rem;
-      color: #25D366;
-      margin-top: 10px;
-    }
-
-    .winners-section {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .winner-card {
-      background-color: rgba(230,255,238,0.1);
-      border-radius: 12px;
-      padding: 15px;
-      margin: 10px auto;
-      max-width: 400px;
-      border: 1px solid #25D366;
-    }
-
-    .winner-name {
-      color: #00e676;
-      font-weight: bold;
-    }
-
-    .winner-amount {
-      font-weight: bold;
-    }
   </style>
 </head>
+
 <body>
-  <img class="whatsapp-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+
   <h1>WhatsApp</h1>
 
-  <img class="logo" src="empire.jpg" alt="Logo Red Empire" />
-
-  <div class="title">RED EMPIRE </div>
+  <div class="title">RED EMPIRE</div>
   <div class="subtitle">Bono de bienvenida (CON CARGA)</div>
-  <div class="subtitle">Carga mínima: $2000</div>
 
-  <a class="cta-button" id="btn-wa" href="https://wa.me/5493518055964">¡CREAR USUARIO AHORA!</a>
-
-  <div class="footer-links">
-    ¿Aún no tienes WhatsApp? <a href="https://www.whatsapp.com/download" target="_blank">Descargar</a><br>
-    <a href="#">Términos y condiciones</a> | <a href="#">Política de privacidad</a>
-  </div>
-
-  <div class="winners-section">
-    <h3 style="color: #25D366;">“Excelente” ★★★★★ Calificación 4.9/5 en ★ Trustpilot</h3>
-
-    <div class="winner-card">
-      <div class="winner-name">Roberto Pérez</div>
-      🥇 <span class="winner-amount">Ganador de $100.000</span><br>
-      Desde La Plata • hace 10 minutos
-    </div>
-
-    <div class="winner-card">
-      <div class="winner-name">Mariana Gómez</div>
-      🥇 <span class="winner-amount">Ganadora de $350.000</span><br>
-      Desde Córdoba • hace 22 minutos
-    </div>
-
-    <div class="winner-card">
-      <div class="winner-name">Lucas Fernández</div>
-      🥇 <span class="winner-amount">Ganador de $630.000</span><br>
-      Desde Rosario • hace 45 minutos
-    </div>
-
-    <div class="winner-card">
-      <div class="winner-name">Sofía Martínez</div>
-      🥇 <span class="winner-amount">Ganadora de $200.000</span><br>
-      Desde Mendoza • hace 1 hora
-    </div>
-  </div>
-
-  <!-- Contador de usuarios -->
-  <div id="contador-falso" style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 12px 18px; border-radius: 10px; font-size: 16px; z-index: 9999; color:#fff;">
-    Usuarios conectados: <span id="usuarios-numero"></span>
-  </div>
-
-  <!-- Notificaciones de premios -->
-  <div id="notificacion-premio" style="position: fixed; top: 20px; right: 20px; background: #1ebc5a; color: white; padding: 14px 20px; border-radius: 12px; font-weight: bold; font-size: 15px; display: none; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-    🎉 ¡Alguien acaba de ganar $25.000!
-  </div>
+  <a class="cta-button" id="btn-wa" href="https://wa.me/5493518055964">
+    ¡CREAR USUARIO AHORA!
+  </a>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const trigger = document.getElementById("btn-wa");
+
       if (trigger) {
         trigger.addEventListener("click", function (e) {
+
+          // 🔥 EVENTO CONTACT (LO IMPORTANTE)
           if (typeof fbq !== 'undefined') {
             fbq('track', 'Contact');
           }
+
           const base = trigger.getAttribute('href') || '';
           const joiner = base.includes('?') ? '&' : '?';
-          const url = base + joiner + 'text=' + encodeURIComponent('Hola, quiero crear mi usuario en RED EMPIRE.');
+          const url = base + joiner + 'text=' + encodeURIComponent('Hola, quiero crear mi usuario');
+
           e.preventDefault();
           window.open(url, '_blank');
         });
       }
-
-      const usuariosElemento = document.getElementById("usuarios-numero");
-      if (usuariosElemento) {
-        const minUsuarios = 78, maxUsuarios = 132;
-        function actualizarUsuarios() {
-          const num = Math.floor(Math.random() * (maxUsuarios - minUsuarios + 1)) + minUsuarios;
-          usuariosElemento.textContent = num;
-        }
-        actualizarUsuarios();
-        setInterval(actualizarUsuarios, 3000);
-      }
-
-      const noti = document.getElementById("notificacion-premio");
-      if (noti) {
-        const mensajes = [
-          "🎉 ¡Alguien ganó $25.000!",
-          "🎁 ¡Premio liberado de $10.000!",
-          "💸 ¡Jugador cobró $18.500!",
-          "🔥 ¡Ganancia de $32.000 confirmada!",
-          "🎊 ¡Nuevo ganador en Córdoba!",
-          "✅ ¡Transferencia enviada al instante!"
-        ];
-        function mostrarNoti() {
-          noti.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
-          noti.style.display = "block";
-          setTimeout(() => { noti.style.display = "none"; }, 4200);
-        }
-        setInterval(mostrarNoti, 9000);
-      }
     });
   </script>
+
 </body>
 </html>
