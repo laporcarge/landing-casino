@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ganamos</title>
+  <title>Contacto oficial</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,8 +15,8 @@
   <script>
     !function(f,b,e,v,n,t,s){
       if(f.fbq)return;n=f.fbq=function(){
-        n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+      };
       if(!f._fbq)f._fbq=n;
       n.push=n;n.loaded=!0;n.version='2.0';
       n.queue=[];
@@ -24,13 +24,11 @@
       t.src=v;
       s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
-    }(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
     fbq('init', '1636099344198092');
     fbq('track', 'PageView');
   </script>
-
   <noscript>
     <img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1636099344198092&ev=PageView&noscript=1"/>
@@ -47,28 +45,49 @@
       background: url("img/fondo-2.avif") no-repeat center center fixed;
       background-size: cover;
       text-align: center;
+      min-height: 100vh;
+    }
+
+    .overlay {
+      min-height: 100vh;
+      background: rgba(0, 0, 0, 0.58);
+      padding: 28px 18px 40px;
     }
 
     .logo img {
-      margin-top: 40px;
-      width: 230px;
+      margin-top: 28px;
+      width: 200px;
+      max-width: 80%;
     }
 
     .main-title {
-      margin: 30px 0;
+      margin: 28px auto 18px;
       font-family: 'Bebas Neue', sans-serif;
+      max-width: 700px;
     }
 
     .main-title p {
-      font-size: 36px;
-      margin: 10px 0;
-      text-shadow: 0px 0px 8px rgba(0,0,0,0.6);
+      font-size: 34px;
+      margin: 8px 0;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 8px rgba(0,0,0,0.45);
     }
 
-    .wsp { margin: 40px 0; }
+    .subtext {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #f1f1f1;
+      text-shadow: 0 0 6px rgba(0,0,0,0.35);
+    }
+
+    .wsp {
+      margin: 30px 0 26px;
+    }
 
     .go {
-      padding: 0.9em 2em;
+      padding: 0.95em 2em;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 28px;
       background-color: #25D366;
@@ -80,11 +99,11 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
     .go:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
       background-color: #1ebc5a;
     }
 
@@ -94,37 +113,81 @@
     }
 
     .info-box {
-      margin-bottom: 60px;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 10px;
     }
 
     .info-box p, .info-box h3 {
       margin: 12px 0;
-      text-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+      text-shadow: 0 0 6px rgba(0,0,0,0.35);
+    }
+
+    .info-box p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #f3f3f3;
+    }
+
+    .info-box h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+    }
+
+    .legal {
+      max-width: 760px;
+      margin: 34px auto 0;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .legal a {
+      color: #ffffff;
+      text-decoration: underline;
     }
   </style>
 </head>
-
 <body>
+  <div class="overlay">
+    <div class="logo">
+      <img src="img/logo casss.png" alt="Logo" />
+    </div>
 
-  <div class="logo">
-    <img src="img/logo casss.png" alt="Logo" />
-  </div>
+    <div class="main-title">
+      <p>CONTACTO OFICIAL POR WHATSAPP</p>
+      <p>ATENCIÓN RÁPIDA Y ASISTENCIA</p>
+    </div>
 
-  <div class="main-title">
-    <p>HACÉ CLICK EN CONTACTARSE</p>
-    <p>Y COMENZÁ A GANAR</p>
-  </div>
+    <div class="subtext">
+      Comunicate por WhatsApp para recibir información, asistencia y detalles de acceso.
+    </div>
 
-  <div class="wsp">
-    <button class="go" id="btn">
-      CONTACTARSE
-      <img src="img/whatsapp.png" alt="W" />
-    </button>
-  </div>
+    <div class="wsp">
+      <button class="go" id="btn">
+        CONTACTARSE
+        <img src="img/whatsapp.png" alt="WhatsApp" />
+      </button>
+    </div>
 
-  <div class="info-box">
-    <p>Mínimo de carga: $2.000</p>
-    <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3>
+    <div class="info-box">
+      <p>Atención personalizada por WhatsApp.</p>
+      <h3>INFORMACIÓN · ASISTENCIA · CONTACTO</h3>
+      <p>Promociones y beneficios sujetos a condiciones y validación correspondiente.</p>
+    </div>
+
+    <div class="legal">
+      <p>Este sitio funciona como canal de contacto e información.</p>
+      <p>
+        Al continuar, aceptás nuestros
+        <a href="#">Términos y condiciones</a>
+        y
+        <a href="#">Política de privacidad</a>.
+      </p>
+      <p>Solo para mayores de 18 años.</p>
+    </div>
   </div>
 
   <script>
@@ -132,20 +195,15 @@
       const trigger = document.getElementById("btn");
       if (trigger) {
         trigger.addEventListener("click", function () {
-
-          // EVENTO PARA META
           if (typeof fbq !== 'undefined') {
             fbq('track', 'Contact');
           }
 
-          // TU WHATSAPP
-          const url = "https://wa.me/5493518055964?text=Hola,%20quiero%20crear%20mi%20usuario";
-
+          const url = "https://wa.me/5493518055964?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n";
           window.open(url, "_blank");
         });
       }
     });
   </script>
-
 </body>
 </html>
