@@ -3,31 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DuckLuck</title>
-  <link rel="stylesheet" href="estilo.css" />
+  <title>Ganamos</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="shortcut icon"
-    href="./img/1.png"
-    type="image/x-icon"
-  />
-  <meta name="facebook-domain-verification" content="c3bdjyek9vda1xttc2d9ixq20k2wrm" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Ícono -->
+  <link rel="shortcut icon" href="img/logo casss.png" type="image/x-icon" />
 
   <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){
+        n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
 
     fbq('init', '1863041204266352');
@@ -35,140 +34,116 @@
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"
-    />
+    src="https://www.facebook.com/tr?id=1863041204266352&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      background: url("img/fondo-2.avif") no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .logo img {
+      margin-top: 40px;
+      width: 230px;
+    }
+
+    .main-title {
+      margin: 30px 0;
+      font-family: 'Bebas Neue', sans-serif;
+    }
+
+    .main-title p {
+      font-size: 36px;
+      margin: 10px 0;
+      text-shadow: 0px 0px 8px rgba(0,0,0,0.6);
+    }
+
+    .wsp {
+      margin: 40px 0;
+    }
+
+    .go {
+      padding: 0.9em 2em;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      background-color: #25D366;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .go:hover {
+      transform: scale(1.05);
+      background-color: #1ebc5a;
+    }
+
+    .go img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .info-box {
+      margin-bottom: 60px;
+    }
+
+    .info-box p, .info-box h3 {
+      margin: 12px 0;
+      text-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
-
 <body>
+
   <div class="logo">
-    <img src="./img/1.png" alt="Ducky Logo" />
+    <img src="img/logo casss.png" alt="Logo" />
   </div>
 
   <div class="main-title">
-    <p>HACE CLICK EN CONTACTARSE</p>
+    <p>HACÉ CLICK EN CONTACTARSE</p>
     <p>Y COMENZÁ A GANAR</p>
   </div>
 
-  <!-- BOTÓN WHATSAPP -->
-  <div class="whatsapp">
-    <button class="button" id="whatsappButton">
+  <div class="wsp">
+    <button class="go" id="btn">
       CONTACTARSE
-      <img src="img/whatsapp-64.png" alt="Whatsapp Icon" />
+      <img src="img/whatsapp.png" alt="W" />
     </button>
   </div>
 
-  <!-- SCRIPT: aleatorizar número y redirigir -->
-  <script>
-    document
-      .getElementById("whatsappButton")
-      .addEventListener("click", function () {
-        const numeros = [
-          "5493518055964"
-        ];
-        const idx = Math.floor(Math.random() * numeros.length);
-        const numero = numeros[idx];
-
-        const mensaje = "¡Hola! Vi este anuncio, quiero un usuario.";
-        const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
-        window.open(url, "_blank");
-      });
-  </script>
-
-  <div class="info">
+  <div class="info-box">
     <p>Mínimo de carga: $2.000</p>
-    <h3>
-      SEGURIDAD EN CADA JUGADA<br />
-      PAGOS TOTALES<br />
-      Y MUCHO MÁS
-    </h3>
+    <h3>SEGURIDAD EN CADA JUGADA<br/>PAGOS TOTALES<br/>Y MUCHO MÁS</h3>
   </div>
 
-  <!-- ESTILOS EMBEBIDOS -->
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #000000;
-      background-image: url("img/FONDO\ LINK.png");
-      background-size: contain;
-      background-position: center;
-      margin: 0;
-      padding: 0;
-    }
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin: 5rem 0 2rem;
-    }
-    .logo img {
-      width: 150spx;
-    }
-    .main-title {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .main-title p {
-      margin: 0;
-      font-size: 35px;
-      letter-spacing: -1px;
-      line-height: 1.1;
-    }
-    .main-title p:first-child {
-      color: #fff;
-    }
-    .main-title p:last-child {
-      color: #ffb41f;
-    }
-    .whatsapp {
-      margin: 3rem 0 1rem;
-      display: flex;
-      justify-content: center;
-    }
-    .button {
-      padding: 0.6em 1.3em;
-      display: flex;
-      gap: 1rem;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 28px;
-      background-color: #000;
-      border-radius: 10px;
-      border: 1px solid rgb(255, 139, 23);
-      color: #fff;
-      box-shadow:
-        0 0 25px rgb(255, 141, 35),
-        0 0 25px rgb(255, 136, 38),
-        0 0 5px rgb(255, 100, 22) inset;
-      cursor: pointer;
-    }
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow:
-        0 0 30px rgb(245, 183, 37),
-        0 0 30px rgb(245, 196, 37),
-        0 0 10px rgb(249, 220, 35) inset;
-    }
-    .button img {
-      width: 30px;
-    }
-    .info {
-      text-align: center;
-      color: #ffffff;
-      margin: 2rem 0;
-    }
-    .info p {
-      color: #fff;
-      font-size: 18px;
-      margin: 0;
-    }
-    .info h3 {
-      font-size: 28px;
-      margin: 0.5rem 0 0;
-      line-height: 1.2;
-    }
-  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const trigger = document.getElementById("btn");
+      if (trigger) {
+        trigger.addEventListener("click", function () {
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Contact');
+          }
+          const encoded = "aHR0cHM6Ly93YS5tZS81NDkzNTE4MDU1OTY0P3RleHQ9wqFIb2xhISBWaSBlc3RlIGFudW5jaW8sIHF1aWVybyB1biB1c3VhcmlvLg==";
+          window.open(atob(encoded), "_blank");
+        });
+      }
+    });
+  </script>
 </body>
 </html>
